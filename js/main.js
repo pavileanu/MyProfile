@@ -1,6 +1,7 @@
 ;(function () {
 	
 	'use strict';
+	
 
 	var isMobile = {
 		Android: function() {
@@ -103,14 +104,14 @@
 	
 	};
 
-	var pieChart = function() {
-		$('.chart').easyPieChart({
+	var pieChart = function(chartClass, barColor) {
+		$('.' + chartClass).easyPieChart({
 			scaleColor: false,
 			lineWidth: 4,
 			lineCap: 'butt',
-			barColor: '#FF9000',
+			barColor: barColor,
 			trackColor:	"#f5f5f5",
-			size: 160,
+			size: 110,
 			animate: 1000
 		});
 	};
@@ -120,14 +121,19 @@
 			$('#fh5co-skills').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout( pieChart , 400);					
+					setTimeout( () => {
+						pieChart('chart-1', '#2980b9');
+						pieChart('chart-2', '#c0392b');
+						pieChart('chart-3', '#d35400');
+						pieChart('chart-4', '#8e44ad');
+						pieChart('chart-5', '#27ae60');
+					} , 400);					
 					$(this.element).addClass('animated');
 				}
 			} , { offset: '90%' } );
 		}
 
 	};
-
 
 	// Loading page
 	var loaderPage = function() {
