@@ -719,6 +719,9 @@ h1, h2, h3, h4, h5, h6, figure {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 20px;
 }
+.fh5co-blog .blog-text .stuff .blog-button {
+  background: #FFFDD0;
+}
 .fh5co-blog .blog-text .stuff li {
   list-style: none;
   display: inline-block;
@@ -757,7 +760,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-blog .desc {
   display: block;
   text-align: center;
-  margin-top: 30px;
+  padding-top: 30px;
   height: 300px;
   width: 100%;
   background: #f2f7f7;
@@ -851,7 +854,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-consult .choose {
   width: 100%;
-  margin: 4em;
+  margin: 2em 4em;
   padding: 0.5em;
 }
 @media screen and (max-width: 768px) {
@@ -882,12 +885,20 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer {
-  padding: 50px 0;
   float: left;
   width: 100%;
 }
 #fh5co-footer p:last-child {
   margin-bottom: 0;
+}
+
+.carousel {
+  width: 80%;
+  margin: auto;
+}
+.carousel .carousel-photo {
+  width: 100%;
+  max-height: 50vh;
 }
 
 .contact-info {
