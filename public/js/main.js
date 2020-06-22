@@ -167,6 +167,57 @@
 		}, 1000);
 	});
 
+
+    $('#sendMessage').click(function(ev){  
+		ev.preventDefault();
+
+		if(!isValidForm()) 
+			return ;
+
+		$.ajax({ 
+			url: '/',
+			type: 'POST',
+			cache: false, 
+			data: { 
+				'name': $('#name').val(), 
+				'email': $('#email').val(),
+				'subject': $('#subject').val(),
+				'message': $('#message').val()
+			}, 
+			success: function(data){
+				alertify.success('Message Sent!');
+			}
+			, error: function(jqXHR, textStatus, err){
+				alertify.error('An error occured, try again or contact me via email!');
+			}
+		});
+	});
+
+	var isValidForm = () => {
+		var errorMesssage = ''
+		if(!$('#name').val()){
+			errorMesssage += 'Insert your name <br>';
+		}
+		if(!$('#email').val()){
+			errorMesssage += 'Insert your email <br>';
+		}
+		if(!$('#name').val()){
+			errorMesssage += 'Type a subject <br>';
+		}
+		if(!$('#name').val()){
+			errorMesssage += 'Write a message';
+		}
+
+		if (errorMesssage) {
+			alertify.error(errorMesssage);
+			return false;
+		}
+
+		return true;
+
+	}
+	 
+
 	
 	$(function(){
 		contentWayPoint();
