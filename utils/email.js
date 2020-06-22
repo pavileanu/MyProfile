@@ -7,7 +7,7 @@ const pass = 'Jaolica1';
 
 const sendEmail = async options => {
     
-    try {
+    //try {
         const transporter = nodemailer.createTransport({
             host,
             port,
@@ -26,10 +26,12 @@ const sendEmail = async options => {
         }
 
         const response = await transporter.sendMail(mailOptions);
-        return 'e bine';
-    } catch (err) {
+        return true;
+    //} 
+    /*
+    catch (err) {
         return err.messsage;
-    }
+    }*/
 
 }
 
