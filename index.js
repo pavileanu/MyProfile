@@ -25,7 +25,7 @@ app.post('/', async (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const port = 3004;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log('App running');
 });
