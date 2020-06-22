@@ -16,7 +16,7 @@ const sendEmail = async options => {
                 pass
             }
         });
-
+        
         const mailOptions = {
             from: 'Freelancer Mircea Mailer',
             to: user,
@@ -31,6 +31,7 @@ const sendEmail = async options => {
     
     catch (err) {
         console.log(err);
+        return false; 
     }
 
 }
