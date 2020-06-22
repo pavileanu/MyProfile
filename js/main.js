@@ -135,10 +135,37 @@
 
 	};
 
+	var tabClickTrigger = function() {
+		$('.fh5co-tab-menu a').on('click', function(event) {
+			//event.preventDefault();
+			var $this = $(this);
+
+			$('.fh5co-tab-menu li').removeClass('active');
+			$this.closest('li').addClass('active');
+
+			$('.fh5co-tab-menu .active').addClass('animated fadeOutDown');
+
+			setTimeout(function(){
+				$('.fh5co-tab-menu .active').removeClass('animated fadeOutDown fadeInUp');
+				$('.fh5co-tab-menu .active').addClass('animated fadeInUp');
+			}, 500);		
+		})
+	};
+
 	// Loading page
 	var loaderPage = function() {
 		$(".fh5co-loader").fadeOut("slow");
 	};
+
+	$(document).on('click', 'a[href^="#"]', function (event) {
+		event.preventDefault();
+
+		if($(this).attr('data-slide')) return;
+	
+		$('html, body').animate({
+			scrollTop: $($.attr(this, 'href')).offset().top
+		}, 1000);
+	});
 
 	
 	$(function(){
@@ -147,7 +174,7 @@
 		loaderPage();
 		fullHeight();
 		parallax();
-		// pieChart();
+		tabClickTrigger();
 		skillsWayPoint();
 	});
 

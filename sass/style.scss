@@ -22,7 +22,7 @@ $brand-selection-color: #f9f6f0;
 $brand-overlay-color: #4c4a8a;
 $brand-bg-color: $brand-white;
 
-$brand-secondary: #FFFDD0;
+$brand-secondary: rgb(227, 237, 85);
 
 $brand-bg-dark: #2F3C4F;
 
@@ -198,7 +198,8 @@ h1, h2, h3, h4, h5, h6, figure {
 		display: table;
 	}
 	.display-tc {
-		display: table-cell;
+		//display: table-cell;
+		margin-top: 2em;
 		vertical-align: middle;
 		height: 600px;
 		h1, h2, h3 {
@@ -308,7 +309,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 	.feature-left {
 		margin-bottom: 40px;
-		float: left;
+		//float: left;
 		@media screen and (max-width: $screen-md) {
 			margin-bottom: 30px;
 		}
@@ -356,7 +357,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-skills,
 #fh5co-started,
 #fh5co-work,
-#fh5co-blog,
+//#fh5co-blog,
 #fh5co-pricing,
 #fh5co-contact{
 	padding: 2em 0;
@@ -436,9 +437,16 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer{
+	background: $brand-primary;
+	padding: 10px;
+	span {
+		color: $brand-white;
+		float: right;
+	}
 	.fh5co-social-icons {
 		margin: 0;
 		padding: 0;
+		display: inline-block;
 		li {
 			padding: 0;
 			list-style: none;
@@ -624,6 +632,12 @@ h1, h2, h3, h4, h5, h6, figure {
 	font-size: 16px;
 	font-weight: normal;
 	color: lighten($brand-black, 75%);
+}
+
+.company-name{
+	display: block;
+	font-weight: normal;
+	color: $brand-secondary;
 }
 
 .timeline-body > p,
@@ -963,9 +977,7 @@ h1, h2, h3, h4, h5, h6, figure {
 input[type="text"] {
 	height: 50px;
 }
-.form-group {
-	margin-bottom: 30px;
-}
+
 
 
 // Map
@@ -1161,7 +1173,7 @@ input[type="text"] {
 	box-shadow: none;
 	background: transparent;
 	border: 2px solid rgba(0, 0, 0, 0.1);
-	height: 54px;
+	//height: 54px;
 	font-size: 18px;
 	font-weight: 300;
   	&:active, &:focus {
@@ -1200,5 +1212,98 @@ input[type="text"] {
 .animate-box {
 	.js & {
 		opacity: 0;
+	}
+}
+
+
+.fh5co-tab-menu {
+	list-style: none;
+	text-align: center;
+	margin-bottom: 2em;
+	position: relative;
+	top: -.5em;
+	padding: 0;
+	margin: 0;
+
+	box-sizing: content-box;
+	opacity: 0.8;
+
+	@media screen and (max-width: $screen-sm) {
+		top: -7px;
+	}
+	li {
+		@include inline-block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		a {
+			padding: 2em 1em 1em 1em;
+			position: relative;
+			color: $brand-white;
+			z-index: 10;
+			@include inline-block;
+			@include transition(.3s);
+			.icon {
+				display: block;
+				position: relative;
+				font-size: 22px;
+				bottom: 0;
+				@include transition(.3s);
+			}
+			.menu-text {
+				display: block;
+				@include transition(.5s);
+				@media screen and (max-width: $screen-sm) {
+					display: none;
+				}
+			}
+			@media screen and (max-width: $screen-sm) {
+				padding: 1em .5em .5em .5em;
+			}
+			&:after {
+				position: absolute;
+				content: "";
+				height: 0;
+				background: $brand-primary;
+				z-index: -1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				-webkit-transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+				-moz-transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+				-ms-transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+				-o-transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+				transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+				@include border-radius(7px);
+			}
+			&:hover {
+				color: $brand-secondary;
+				text-decoration: none;
+				.icon {
+					bottom: 10px;
+					@media screen and (max-width: $screen-sm) {
+						bottom: 0px;
+					}
+				}
+				&:after {
+					height: 100%;
+				}
+			}
+		}
+		&.active {
+			.icon {
+				bottom: 10px;
+				@media screen and (max-width: $screen-sm) {
+					bottom: 0px;
+				}
+			}
+			> a {
+				color: $brand-secondary;
+				text-decoration: none;
+				&:after {
+					height: 100%;
+				}
+			}
+		}
 	}
 }
