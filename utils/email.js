@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer');
 
-const host = 'smtp.gmail.com';
-const port = 465;
-const user = 'pavileanumircea@gmail.com';
-const pass = 'Jaolica1';
+const host = 'in-v3.mailjet.com';
+const port = 587;
+const user = '41712a127e91c683e322bf7eefbffb56';
+const pass = 'fdd0c268bd16664db50094be19f95fca';
 
 const sendEmail = async options => {
     
@@ -16,10 +16,10 @@ const sendEmail = async options => {
                 pass
             }
         });
-        
+
         const mailOptions = {
-            from: 'Freelancer Mircea Mailer',
-            to: user,
+            from: 'pavileanumircea@gmail.com',
+            to: 'pavileanumircea@gmail.com',
             subject: options.subject,
             text: 'Email: ' +  options.email + ' Name:' + options.name + '\n' + 'Message:  '
                     + options.message
