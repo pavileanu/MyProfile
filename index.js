@@ -16,16 +16,18 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
     const emailSent = await sendEmail(req.body);
-    if(emailSent)  {
+    /* if(emailSent)  {
         res.status(200).send();
     } else {
         res.status(500).send();
-    }
+    } */
+    res.status(200).json({"message": emailSent});
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const port = process.env.PORT;
+const port = process.env.PORT  || 3004;
+console.log(port);
 app.listen(port, () => {
     console.log('App running');
 });

@@ -26,9 +26,9 @@ const sendEmail = async options => {
         }
 
         const response = await transporter.sendMail(mailOptions);
-        return true;
+        return 'e bine';
     } catch (err) {
-        return false;
+        return err.messsage;
     }
 
 }

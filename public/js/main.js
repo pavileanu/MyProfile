@@ -185,6 +185,7 @@
 				'message': $('#message').val()
 			}, 
 			success: function(data){
+				alert(data['message']);
 				alertify.success('Message Sent!');
 			}
 			, error: function(jqXHR, textStatus, err){
