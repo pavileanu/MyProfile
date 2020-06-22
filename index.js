@@ -16,12 +16,11 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
     const emailSent = await sendEmail(req.body);
-    /* if(emailSent)  {
+    if(emailSent)  {
         res.status(200).send();
     } else {
         res.status(500).send();
-    } */
-    res.status(200).json({"message": emailSent});
+    }
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
