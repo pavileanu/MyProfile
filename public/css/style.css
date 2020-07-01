@@ -797,20 +797,6 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-transform: translate3d(0, 15px, 0);
   transform: translate3d(0, 15px, 0);
 }
-@media screen and (max-width: 768px) {
-  .fh5co-blog .desc {
-    opacity: 1;
-    background: rgba(242, 247, 247, 0.6);
-  }
-  .fh5co-blog .desc h3 {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .fh5co-blog .desc span {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
 .fh5co-blog:hover .desc {
   opacity: 1;
 }
@@ -1325,4 +1311,4 @@ input[type=text] {
   height: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */
